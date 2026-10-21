@@ -1,39 +1,67 @@
-# Authorized Nmap NULL Scan — Interpreting Uncertain Port States
+# Nmap Network Security Assessment
 
-**Status:** Historical command and output recorded in prior conversation; original screenshot and current VM address verification pending.
+## Project Overview
 
-## Objective
-Learn what a TCP NULL scan sends, how a target may respond, and why Nmap's results can be ambiguous.
+Conducted a TCP NULL scan in an authorized virtual-machine training environment using Nmap.
 
-## Lab scope
-An educational Kali/Windows VM network. **Private addresses below are historical observations**, not current targets. Do not reuse without checking and securing permission.
+The objective was to investigate TCP port behavior, interpret scan results, and understand the limitations of network reconnaissance.
 
-## Previously recorded command and output — August 17, 2026
+## Tools Used
 
-```bash
-sudo nmap -sN -Pn -p 22 10.0.2.15
-```
+- Nmap
+- Kali Linux
+- Virtual-machine networking
+- TCP/IP
 
-The earlier discussion recorded Kali at `10.0.2.4` and target `10.0.2.15`, with output resembling:
+## Investigation Objectives
 
-```text
-22/tcp open|filtered ssh
-```
+1. Perform an authorized network scan.
+2. Examine TCP port states.
+3. Understand how TCP NULL scans work.
+4. Interpret ambiguous scan results.
+5. Document findings accurately.
 
-A corresponding Wireshark inspection on `eth1` was discussed: a NULL scan sends TCP probe packets with no TCP flag bits set, and a lack of a response was observed in that walkthrough. **This is conversation-recorded text, not a reproduced scan or uploaded capture.** The `ssh` column can be Nmap's service-name mapping for TCP/22; it does not by itself prove an SSH server was running.
+## Lab Activity
 
-## Interpretation
+Used Nmap's `-sN` option to perform a TCP NULL scan against a training VM.
 
-- `open|filtered` **does not mean “open.”** Nmap cannot disambiguate an open service from filtering from this particular observation.
-- No response can occur because a port is open, filtering intervenes, or the operating system behaves differently from the expected RFC behavior.
-- Further assessment requires a separate permitted scan/test and additional evidence.
-- **No confirmed vulnerability or exposure is reported here.**
+A NULL scan sends TCP probes with no TCP flags set.
 
-## Evidence needed
+The lab included examining results reported as `open|filtered`.
 
-- Redacted terminal screenshot of command and output.
-- Redacted Wireshark screenshot highlighting NULL-probe flags (and response context).
-- Exact test date, VM interface, authorized scope, and target IP confirmed from original evidence.
+## Findings
 
-## Skills demonstrated
-Choosing a scan technique and interpreting uncertainty rather than presenting an inconclusive port state as a discovery.
+### Open or Filtered Ports
+
+Nmap reported an `open|filtered` state during the exercise.
+
+This result means Nmap could not determine whether the port was open or whether traffic was being filtered.
+
+An `open|filtered` result does not confirm an active service or a vulnerability.
+
+### Technical Interpretation
+
+TCP NULL scans can help investigate how a system responds to unusual TCP probes.
+
+Results may vary depending on the operating system, firewall configuration, and network conditions.
+
+Additional authorized testing would be necessary to determine the actual state of an ambiguous port.
+
+## Screenshot Evidence
+
+[View Nmap NULL Scan Results](evidence/nmap%20download.png)
+
+## Skills Demonstrated
+
+- Network reconnaissance
+- TCP port-state interpretation
+- Nmap command-line usage
+- Security assessment fundamentals
+- Technical documentation
+- Understanding scan limitations
+
+## Conclusion
+
+This training exercise improved my understanding of TCP scanning techniques and the importance of interpreting network-security results accurately.
+
+The screenshot documents an educational lab exercise. No confirmed vulnerability or unauthorized assessment is claimed.
