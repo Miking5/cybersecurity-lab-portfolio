@@ -1,26 +1,77 @@
-# Digital Forensics: Scalpel File-Carving Troubleshooting
+# Digital Forensics — Scalpel File Carving
 
-**Status: Incomplete.** Do **not** describe this as successful file recovery.
+## Project Overview
 
-## Objective
-Practice carving known file types from an authorized forensic image and documenting reproducible results.
+Practiced digital forensic file carving using Scalpel in a Kali Linux training environment.
 
-## Conversation-recorded activity
+The investigation focused on recovering file data from forensic images, understanding file signatures, and troubleshooting evidence-processing issues.
 
-- Reviewed a file-carving lab guide and worked with Kali/Scalpel configuration and command-line paths.
-- A September 16, 2026 lab troubleshooting session could not find the expected image (`windows7_64GB_image.dd`) under `/home/kali`. Searches did not locate the required practice evidence there.
-- Therefore the investigation **did not establish recovered JPEG/PDF/Excel artifacts** from that image.
+**Project Status:** Lab activity documented; recovered file contents require further verification.
 
-## Workflow to complete later
+## Tools Used
 
-1. Confirm which forensic image the lab authorizes and where it is actually stored.
-2. Record its hash and keep the source read-only.
-3. Confirm `scalpel.conf` file signatures are enabled for desired types.
-4. Run Scalpel against the authorized image and a separate output folder.
-5. Verify recovered files with appropriate file identification and document each outcome, including false positives.
+- Kali Linux
+- Scalpel
+- Linux command line
+- Forensic disk-image exercises
 
-## Current finding
-The immediate blocker was an **unavailable input forensic image**, not a verified recovery result. Troubleshooting the evidence path is part of sound investigative practice.
+## Investigation Objectives
 
-## Evidence needed
-Original command-line images, the authorized input image path/hash, audit trail, output directory contents, and screenshots of files only if legitimately recovered.
+1. Understand forensic file carving.
+2. Examine file signatures and recovery methods.
+3. Configure and execute Scalpel.
+4. Review file-carving output.
+5. Document errors and investigation limitations.
+
+## Lab Investigation
+
+### File Carving
+
+Performed file-carving exercises using Scalpel.
+
+One recorded Scalpel run reported 231 carved files.
+
+This count represents the tool's reported output, not 231 independently validated or usable recovered files.
+
+### Troubleshooting
+
+Encountered problems locating a forensic image during an earlier exercise.
+
+Investigated file paths, directory locations, and command-line execution.
+
+These challenges demonstrated the importance of verifying evidence locations before running forensic tools.
+
+## Screenshot Evidence
+
+[View Scalpel File Carving Results](evidence/01-scalpel-231-files-carved.png)
+
+## Skills Demonstrated
+
+- Digital forensics fundamentals
+- File signature analysis concepts
+- Scalpel file-carving workflow
+- Kali Linux command-line usage
+- Troubleshooting forensic tools
+- Technical documentation
+
+## Limitations
+
+The source image and individual carved files are not published.
+
+The reported file count does not confirm that each recovered file is complete, valid, or readable.
+
+Additional verification would be required to establish successful recovery of particular file types.
+
+## Next Steps
+
+- Verify recovered files individually
+- Document source-image details
+- Record forensic image hashes
+- Review Scalpel audit output
+- Expand findings with verified evidence
+
+## Conclusion
+
+This lab provided hands-on experience with forensic file-carving techniques, command-line troubleshooting, and evidence documentation.
+
+The project demonstrates practical training and ongoing technical development rather than a completed forensic investigation.
