@@ -1,28 +1,78 @@
-# Volatility 3 Memory Analysis — Partial Windows Triage
+# Volatility 3 — Windows Memory Forensics
 
-**Status:** **In progress / partial findings**. Original memory image and screenshots unavailable in this repository.
+## Project Overview
 
-## Objective
-Explore processes and network artifacts in a Windows lab memory image using Volatility 3.
+Practiced Windows memory forensics using Volatility 3 in a Kali Linux training environment.
 
-## Activity from previous lab conversations
+**Project Status:** In progress — partial observations and troubleshooting documented.
 
-- Set up and launched Volatility 3 in Kali (`/opt/volatility3` was mentioned during troubleshooting).
-- A September 24, 2026 walkthrough described output including `explorer.exe`, `chrome.exe`, `cmd.exe`, `conhost.exe`, and `MRCv120.exe`.
-- An earlier `windows.netscan` discussion identified `172.16.0.5:139 LISTENING`, PID 4, shown as `System` in the output.
-- Other attempts ran into tool/image problems or crashes. These findings are **not enough to conclude compromise**.
+## Tools Used
 
-## Example commands to document after verification
+- Volatility 3
+- Kali Linux
+- Windows memory analysis exercises
+- Linux terminal
 
-```bash
-# Examples of syntax, not claims that each command succeeded
-python3 vol.py -f <your-authorized-memory-image> windows.info
-python3 vol.py -f <your-authorized-memory-image> windows.pslist
-python3 vol.py -f <your-authorized-memory-image> windows.netscan
-```
+## Investigation Objectives
 
-## Cautions
-An executable process name does not establish malware, and listening on SMB/NetBIOS TCP 139 is not inherently malicious. Re-open the original memory image and capture precise output/screenshots before refining these findings.
+1. Examine a Windows memory image.
+2. Identify running processes.
+3. Investigate network-related artifacts.
+4. Troubleshoot forensic tool errors.
+5. Document findings and limitations.
 
-## Evidence to add
-Authorized memory-image provenance (not the dump itself on a public repo), command/output screenshots, operating system details, plugin versions, hash if collected, timestamps and errors.
+## Investigation Activity
+
+### Process Investigation
+
+Worked with Volatility 3 to investigate Windows process information.
+
+Previous lab discussions included process names such as:
+
+- explorer.exe
+- chrome.exe
+- cmd.exe
+- conhost.exe
+
+Process names alone do not establish malicious activity.
+
+### Network Artifact Analysis
+
+Earlier lab discussions included a network artifact associated with TCP port 139 and a listening system process.
+
+Additional verification is needed before drawing conclusions.
+
+### Troubleshooting
+
+Encountered errors during memory-analysis exercises.
+
+Documenting these errors helps demonstrate troubleshooting methods and areas requiring further investigation.
+
+## Screenshot Evidence
+
+[View Volatility Process Analysis and Troubleshooting](evidence/01-process-analysis-output-and-error.png)
+
+## Skills Demonstrated
+
+- Digital forensic investigation fundamentals
+- Windows process analysis concepts
+- Volatility 3 usage
+- Linux command-line troubleshooting
+- Technical documentation
+
+## Limitations
+
+The original memory image is not included. Historical observations have not all been independently verified against the original image.
+
+No malware infection or system compromise is claimed.
+
+## Next Steps
+
+- Verify the original memory image
+- Repeat the relevant Volatility commands
+- Record confirmed results
+- Update findings with additional evidence
+
+## Conclusion
+
+This training exercise introduced Windows memory forensics and reinforced the importance of troubleshooting, evidence verification, and accurate reporting.
