@@ -1,39 +1,65 @@
-# Wireshark HTTP Response and TCP Stream Analysis
+# Wireshark HTTP Traffic Analysis
 
-**Status:** Practical observations previously discussed; screenshots/PCAP not yet attached or independently verified.
+## Project Overview
 
-## Objective
-Explain how packet captures show a web client request, the server response, and the TCP conversation that transports them.
+Investigated HTTP network traffic using Wireshark in an educational lab environment. Examined client-server communication, TCP streams, HTTP response codes, and server headers.
 
-## Environment and tools
-Wireshark, a browser, and an educational HTTP traffic trace / controlled lab activity. Previous lab material also referenced the UMass HTTP Wireshark exercise. **Do not assume a particular capture is the user's own traffic unless its origin is verified.**
+## Tools Used
 
-## Conversation-recorded observations
+- Wireshark
+- TCP/IP
+- HTTP
+- Kali Linux lab environment
+- UMass HTTP Wireshark training exercise
 
-- In October 2026, the analyst used Wireshark to inspect a TCP conversation and used **Follow TCP Stream**.
-- A prior session discussed an **HTTP `200 OK`** server response, which means the particular HTTP request succeeded at the application-protocol level; it does not mean the system is secure.
-- Screenshots were shared in earlier chats, but the **actual image files and original `.pcapng` have not been recovered** for this portfolio.
+## Investigation Objectives
 
-## Analysis workflow (illustrative, not an audited command log)
+1. Identify HTTP requests and responses.
+2. Inspect communication between client and server.
+3. Use Follow TCP Stream to examine HTTP conversations.
+4. Interpret HTTP response codes and headers.
+5. Document packet-level observations.
 
-1. Inspect packet list and confirm client/server IP addresses from the **actual** trace.
-2. Filter relevant traffic, e.g. `http` or `tcp.stream == <stream-number>`.
-3. Locate request and response in the packet details; record the request method, URI and HTTP status code from the trace.
-4. Use **Follow > TCP Stream** to distinguish client and server payloads.
-5. Record frame number, timestamps, status, and relevant TCP flags from the real capture.
-6. Compare evidence with the exercise questions and describe limitations.
+## Findings
 
-## Finding summary
-An earlier lab walkthrough reached a readable HTTP response and a followed TCP stream. **The packet numbers, request path, host details, and screenshot-backed conclusions are pending verification.** No malicious activity or vulnerability is claimed.
+### HTTP 200 OK
 
-## Evidence to add
+Observed a successful HTTP response from a web server.
 
-- `evidence/01-http-response-redacted.png`: an original image showing HTTP `200 OK` or the relevant packet detail.
-- `evidence/02-follow-tcp-stream-redacted.png`: a sanitized original Follow TCP Stream view.
-- Optional sanitized `*.pcapng` (only if it contains no private traffic or credentials); otherwise retain it privately and describe the evidence.
+- Client IP: 10.0.2.11
+- Server IP: 128.119.245.12
+- HTTP status: 200 OK
+- Server header: Apache/2.4.62 (AlmaLinux)
+- Content type: text/html
 
-## Interview explanation
-“I used Wireshark to inspect an HTTP response and followed the TCP stream to understand the request/response exchange. I documented the response behavior and can explain the difference between transport-layer packets and application-layer content.”
+Used Wireshark's Follow TCP Stream feature to inspect the HTTP request and response.
 
-## Next verification step
-Open the original capture or upload the earlier screenshots, note the exact response packet and stream number, and update this report with an evidence table.
+### HTTP 304 Not Modified
+
+Examined HTTP caching behavior and the meaning of a 304 response, which indicates that the requested representation has not changed under the applicable conditional request.
+
+### Technical Interpretation
+
+An HTTP 200 response confirms that a particular HTTP request succeeded. It does not, by itself, establish whether a system is secure.
+
+A 304 response demonstrates conditional HTTP request behavior and can help explain browser caching.
+
+## Screenshot Evidence
+
+- [HTTP 200 and Follow TCP Stream](evidence/Screenshot%202026-10-16%20150146.png)
+- [HTTP 304 Not Modified](evidence/02-http-304-not-modified.png)
+- [Additional HTTP 200 Response Analysis](evidence/03-http-200-curl-response.png)
+
+## Skills Demonstrated
+
+- Network packet analysis
+- TCP stream inspection
+- HTTP request and response analysis
+- Protocol troubleshooting
+- Technical documentation
+
+## Conclusion
+
+This guided lab improved my ability to investigate network communication using Wireshark, interpret HTTP responses, and document observable network behavior.
+
+The screenshots are from a training environment. No real-world intrusion or vulnerability is claimed.
