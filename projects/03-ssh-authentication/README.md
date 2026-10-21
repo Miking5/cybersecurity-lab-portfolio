@@ -1,35 +1,87 @@
-# Correlating SSH Authentication with Captured Network Traffic
+# SSH Authentication and Network Traffic Investigation
 
-**Status:** Observations recorded from an October 15, 2026 lab discussion; verify screenshots and packet capture before treating as evidence-backed.
+## Project Overview
 
-## Objective
-Correlate a network flow in Wireshark with service-side SSH authentication logs in a controlled lab.
+Investigated SSH network communication and authentication activity in a controlled cybersecurity lab.
 
-## Environment
-Windows VM as SSH client and Kali Linux as SSH server, according to the earlier lab walkthrough. The reported private endpoint pair was:
+Used Wireshark to examine encrypted SSH traffic and Kali Linux authentication logs to understand how network and host-based evidence complement each other.
 
-- Client: `10.0.2.15:49334`
-- SSH server: `10.0.2.11:22`
+## Tools Used
 
-IP addresses and ephemeral ports apply only to the historical session and should not be used as general host identities.
+- Wireshark
+- Kali Linux
+- Windows virtual machine
+- SSH (Secure Shell)
+- Linux authentication logs
+- TCP/IP
 
-## Prior conversation-recorded observations
+## Investigation Objectives
 
-- Wireshark **TCP stream 107** was associated with the reported SSH flow.
-- The Kali service-side log in the walkthrough reported an `Accepted password for kali` event.
-- A capture named **`lab01-ssh.pcapng`** was discussed/saved in the earlier lab. **That file is not attached to this portfolio.**
-- SSH encrypts the login exchange; successful authentication is supported by the **server log**, not by reading the password from the encrypted packet content.
+1. Identify SSH network connections.
+2. Examine TCP port 22 traffic.
+3. Inspect SSH protocol and connection activity.
+4. Review server-side authentication events.
+5. Compare network observations with system logs.
 
-## Suggested final evidence table (fill using originals)
+## Lab Environment
 
-| Evidence | What to verify | File |
-|---|---|---|
-| Packet capture | Actual endpoint pair, protocol, stream/timestamps | `lab01-ssh.pcapng` — not included |
-| Login log | Correct timestamp, successful event, source IP | Sanitized screenshot — pending |
-| Timeline | Match event time to traffic | Pending |
+- SSH client: Windows VM
+- SSH server: Kali Linux
+- Protocol: SSH over TCP
+- Server port: 22
 
-## Limitations and protection
-No source log file, screenshot, PCAP file, or synchronized timestamps are included here. Do not publish passwords or private SSH keys. Never imply Wireshark decrypted SSH credentials.
+Historical lab observations included:
 
-## Interview explanation
-“In a controlled SSH lab, I inspected a client/server flow in Wireshark and compared it to an authentication success event in the Kali SSH logs. That helped me distinguish what encrypted network telemetry shows from what the server log confirms.”
+- Client: `10.0.2.15`
+- Server: `10.0.2.11`
+- Wireshark TCP stream: 107
+
+These addresses and stream numbers apply only to the recorded training exercise.
+
+## Investigation Findings
+
+### 1. SSH Network Traffic
+
+Examined SSH communication using Wireshark.
+
+The capture demonstrated a network connection involving TCP port 22 and SSH protocol activity.
+
+SSH encrypts application data, so the packet capture does not reveal plaintext login credentials.
+
+### 2. Authentication Log Investigation
+
+Reviewed SSH authentication events recorded by the Kali Linux system.
+
+The earlier lab investigation included an `Accepted password for kali` event, indicating that the SSH server accepted a password-based authentication attempt.
+
+This authentication result comes from server-side logging, not decrypted Wireshark traffic.
+
+### 3. Evidence Correlation
+
+Compared observations from network traffic with SSH authentication records.
+
+The exercise demonstrated why security analysts investigate multiple evidence sources when determining what occurred during a connection.
+
+Exact timestamp correlation remains to be verified from the original capture and logs.
+
+## Screenshot Evidence
+
+- [SSH Traffic and Protocol Analysis](evidence/01-ssh-handshake-wireshark.png)
+- [SSH Authentication Log Investigation](evidence/02-ssh-authentication-journal.png)
+
+## Skills Demonstrated
+
+- Network traffic investigation
+- TCP/IP and SSH protocol analysis
+- Linux authentication-log review
+- Wireshark packet inspection
+- Security-event investigation
+- Technical documentation
+
+## Conclusion
+
+This lab strengthened my ability to investigate SSH activity using both network-based and host-based evidence.
+
+It demonstrated the importance of distinguishing encrypted network communication from authentication events confirmed by server logs.
+
+The screenshots document training activity. The original packet capture and raw logs are not published, and no malicious intrusion is claimed.
