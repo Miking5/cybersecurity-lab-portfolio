@@ -1,22 +1,33 @@
-Cybersecurity & IT Lab Portfolio
-Hands-on learning projects in network traffic analysis, network scanning, SSH authentication investigation, and digital forensics. This portfolio demonstrates my investigation methods, technical documentation, and ability to explain what the evidence actually supports.
-Career focus: Entry-level SOC / security operations, network technician, IT infrastructure, and security-support roles.
-Featured projects
-Project	What I investigated	Evidence
-Wireshark: HTTP and TCP Stream Analysis	HTTP `200 OK`, `304 Not Modified`, request/response details, and Follow TCP Stream	3 screenshots
-Nmap: TCP NULL Scan	An authorized VM scan and the meaning of an `open|filtered` result	1 screenshot
-SSH: Packets and Authentication Logs	Encrypted SSH network activity compared with server-side authentication events	2 screenshots
-Volatility 3: Memory Triage	Process output, troubleshooting, and limits of an incomplete memory analysis	1 screenshot
-Scalpel: File Carving	A carving run that reported 231 files and the verification still needed	1 screenshot
-Tools and technical concepts
-Packet analysis: Wireshark, TCP/IP, HTTP requests and responses, TCP streams
-Networking: Nmap, TCP port states, controlled network testing
-Systems: Kali Linux, Windows and Linux virtual-machine labs
-Defensive investigation: SSH authentication logs and network-to-host evidence comparison
-Forensics: Volatility 3 process analysis, Scalpel file carving, documentation of limitations
-How I document a lab
-Each project explains its objective, lab environment, observed evidence, interpretation, and limitations. The screenshots show training exercises and do not establish real-world intrusions or production experience. I document partial work and tool errors instead of presenting unverified findings as completed investigations.
-Explore the evidence
-Open any project above and follow its links to the attached screenshots. Private or sensitive raw captures and forensic images are not published.
----
-This portfolio is an ongoing record of hands-on technical training and project-based skill development.
+# Cybersecurity & IT Lab Portfolio
+
+Hands-on cybersecurity and IT projects demonstrating network analysis, defensive investigation, technical troubleshooting, and digital forensics.
+
+**Career Focus:** Entry-Level SOC Analyst | Network Technician | IT Infrastructure | Cybersecurity Support
+
+## Featured Projects
+
+| Project | Skills Demonstrated | Evidence |
+|---|---|---|
+| [Wireshark HTTP Analysis](projects/01-wireshark-http/README.md) | TCP streams, HTTP 200/304, packet analysis | 3 screenshots |
+| [Nmap Network Scanning](projects/02-nmap-null-scan/README.md) | TCP NULL scan, port-state interpretation | 1 screenshot |
+| [SSH Authentication Investigation](projects/03-ssh-authentication/README.md) | Network traffic, SSH logs, authentication analysis | 2 screenshots |
+| [Volatility Memory Forensics](projects/04-volatility-memory/README.md) | Memory triage, process analysis, troubleshooting | 1 screenshot |
+| [Scalpel File Carving](projects/05-file-carving/README.md) | Digital forensics, file carving, results verification | 1 screenshot |
+
+## Technical Skills
+
+- **Network Analysis:** Wireshark, TCP/IP, HTTP
+- **Network Security:** Nmap, port scanning
+- **Operating Systems:** Kali Linux, Windows, Linux VMs
+- **Security Investigations:** SSH authentication logs, packet inspection
+- **Digital Forensics:** Volatility 3, Scalpel, forensic troubleshooting
+
+## About This Portfolio
+
+These projects document hands-on training exercises, observed results, investigation methods, and technical challenges.
+
+Each project includes documentation and supporting screenshots. Incomplete investigations and findings requiring further verification are identified clearly.
+
+## Career Goals
+
+Seeking opportunities in cybersecurity operations, network support, infrastructure, and defensive security while continuing to develop practical technical skills.
