@@ -14,6 +14,10 @@ Hands-on cybersecurity and IT projects demonstrating network analysis, defensive
 | [Volatility Memory Forensics](projects/04-volatility-memory/README.md) | Memory triage, process analysis, troubleshooting | 1 screenshot |
 | [Scalpel File Carving](projects/05-file-carving/README.md) | Digital forensics, file carving, results verification | 1 screenshot |
 
+## Standalone Investigations
+
+- [Lab 2 — Network Traffic Investigation](https://github.com/Miking5/network-traffic-investigation-lab.) — step-by-step Wireshark/HTTP investigation walkthrough (evidence verification in progress).
+
 ## Technical Skills
 
 - **Network Analysis:** Wireshark, TCP/IP, HTTP
